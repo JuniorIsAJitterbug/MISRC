@@ -11,6 +11,11 @@ jobs:
     runs-on: ubuntu-20.04
 
     steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          fetch-tags: true
+
       - uses: awalsh128/cache-apt-pkgs-action@latest
         with:
           packages: cmake nasm build-essential
